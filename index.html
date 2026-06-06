@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Meow Kanyau Gakwa!</title>
+  <meta
+    name="description"
+    content="A birthday website for Meow Kanyau Gakwa with love from me and Mike."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <canvas id="scene"></canvas>
+    <div class="cursor-bloom" id="cursor-bloom" aria-hidden="true"></div>
+    <div class="grain"></div>
+    <div class="sparkle-layer" id="sparkle-layer" aria-hidden="true"></div>
+
+    <main class="content">
+      <section class="hero panel">
+        <div class="hero-layout">
+          <div class="hero-copy-block">
+            <p class="eyebrow">For our birthday girl</p>
+            <h1>Happy Birthday, Meow Kanyau Gakwa!!</h1>
+            <p class="hero-copy">
+              To my sister, the cat-loving queen with the soft heart and the bright smile:
+              may this new year bring you joy, favor, peace, laughter, and beautiful wins
+              that keep finding you.
+            </p>
+            <p class="hero-copy">
+              You deserve gentle days, loud celebrations, sweet surprises, and all the
+              warm little moments that make life feel magical.
+            </p>
+
+            <div class="badge-row" aria-label="Birthday highlights">
+              <span>Rose Gold Energy</span>
+              <span>Lilac Dream Girl</span>
+              <span>Cat Queen Forever</span>
+            </div>
+
+            <div class="signature-block">
+              <p>With so much love, always.</p>
+              <p class="signature">From me and Mike</p>
+            </div>
+
+            <div class="hero-actions">
+              <a class="scroll-link" href="#gallery">See your birthday wall</a>
+              <button class="ghost-button" id="celebrate-button" type="button">
+                Tap for birthday magic
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="cat-orb">
+              <span class="orb-ring ring-one"></span>
+              <span class="orb-ring ring-two"></span>
+              <span class="orb-ring ring-three"></span>
+
+              <div class="orb-core">
+                <p class="orb-kicker">For Meow</p>
+                <h2>Rose Gold + Lilac</h2>
+                <p>Soft sparkles, proud memories, and all the love in the room.</p>
+              </div>
+
+              <div class="floating-tag tag-one">purrfectly loved</div>
+              <div class="floating-tag tag-two">birthday muse</div>
+              <div class="floating-tag tag-three">main character</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-heading">
+          <p class="eyebrow">Little moments, big love</p>
+          <h2>A few memories for our Meow</h2>
+        </div>
+
+        <div class="photo-grid">
+          <button
+            class="photo-card card-one"
+            type="button"
+            data-tilt
+            data-photo="1.jpeg"
+            data-title="Quiet brilliance"
+            data-note="The thoughtful, focused glow that makes you special."
+          >
+            <div class="photo-wrap">
+              <img src="1.jpeg" alt="A quiet moment of her writing at a desk" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>Quiet brilliance</h3>
+              <p>The thoughtful, focused glow that makes you special.</p>
+              <span class="tap-hint">Tap to open this moment</span>
+            </div>
+          </button>
+
+          <button
+            class="photo-card card-two"
+            type="button"
+            data-tilt
+            data-photo="2.jpeg"
+            data-title="Your people, your light"
+            data-note="The room feels brighter when you are in it."
+          >
+            <div class="photo-wrap">
+              <img src="2.jpeg" alt="A smiling group selfie" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>Your people, your light</h3>
+              <p>The room feels brighter when you are in it.</p>
+              <span class="tap-hint">Tap to open this moment</span>
+            </div>
+          </button>
+
+          <button
+            class="photo-card card-three"
+            type="button"
+            data-tilt
+            data-photo="3.jpeg"
+            data-title="Made for winning"
+            data-note="Grace, effort, beauty, and joy all in one frame."
+          >
+            <div class="photo-wrap">
+              <img src="3.jpeg" alt="A celebration photo with an award" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>Made for winning</h3>
+              <p>Grace, effort, beauty, and joy all in one frame.</p>
+              <span class="tap-hint">Tap to open this moment</span>
+            </div>
+          </button>
+
+          <button
+            class="photo-card card-four"
+            type="button"
+            data-tilt
+            data-photo="4.jpeg"
+            data-title="So deeply loved"
+            data-note="Your story keeps creating proud and beautiful moments."
+          >
+            <div class="photo-wrap">
+              <img src="4.jpeg" alt="A warm graduation celebration moment" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>So deeply loved</h3>
+              <p>Your story keeps creating proud and beautiful moments.</p>
+              <span class="tap-hint">Tap to open this moment</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="surprise panel" id="surprise">
+        <div class="section-heading">
+          <p class="eyebrow">Birthday surprise</p>
+          <h2>Tap the paw and let the love pour out</h2>
+        </div>
+
+        <div class="surprise-layout">
+          <article class="surprise-card">
+            <span class="surprise-badge">Paw to begin</span>
+            <h3>A little birthday blessing machine</h3>
+            <p class="surprise-intro">
+              Every tap sends another wish your way in rose gold and lilac sparkle.
+            </p>
+
+            <button class="surprise-button" id="surprise-button" type="button">
+              Reveal a birthday blessing
+            </button>
+
+            <p class="surprise-message" id="surprise-message" aria-live="polite">
+              Every tap opens another little wish for you.
+            </p>
+            <p class="surprise-hint" id="surprise-hint">Start with one tap, then keep going.</p>
+
+            <div class="surprise-progress" aria-hidden="true">
+              <span class="surprise-dot is-active"></span>
+              <span class="surprise-dot"></span>
+              <span class="surprise-dot"></span>
+              <span class="surprise-dot"></span>
+            </div>
+          </article>
+
+          <div class="mini-notes">
+            <article class="note-card">
+              <p class="note-label">Rose gold wish</p>
+              <p>May your joy stay loud, bright, and impossible to miss.</p>
+            </article>
+            <article class="note-card">
+              <p class="note-label">Lilac wish</p>
+              <p>May your year feel soft, beautiful, calm, and full of favor.</p>
+            </article>
+            <article class="note-card">
+              <p class="note-label">Cat queen wish</p>
+              <p>May every room greet you like the main character you already are.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="message-strip panel">
+        <div class="section-heading">
+          <p class="eyebrow">Birthday note</p>
+          <h2>A wish wrapped in whiskers and stars</h2>
+        </div>
+
+        <div class="wish-grid">
+          <article>
+            <p class="wish-label">Soft days</p>
+            <h3>May your year feel gentle</h3>
+            <p>Like a sleepy cat nap in the sun: peaceful, safe, and full of comfort.</p>
+          </article>
+          <article>
+            <p class="wish-label">Big wins</p>
+            <h3>May your dreams keep opening</h3>
+            <p>In your work, your friendships, your hopes, and every place your heart goes.</p>
+          </article>
+          <article>
+            <p class="wish-label">Deep love</p>
+            <h3>May love keep surrounding you</h3>
+            <p>Today and always, from family, friends, and everyone lucky enough to know you.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing panel">
+        <p class="eyebrow">One more thing</p>
+        <h2>Happy Birthday again, sis.</h2>
+        <p>
+          Keep shining. Keep smiling. Keep being our one and only Meow Kanyau Gakwa.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <div
+    class="photo-modal"
+    id="photo-modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="photo-modal-title"
+  >
+    <div class="modal-shell">
+      <button class="modal-close" id="photo-modal-close" type="button" aria-label="Close photo">
+        X
+      </button>
+
+      <div class="modal-layout">
+        <div class="modal-media">
+          <img id="photo-modal-image" src="" alt="">
+        </div>
+        <div class="modal-copy">
+          <p class="eyebrow">Memory spotlight</p>
+          <h3 id="photo-modal-title"></h3>
+          <p id="photo-modal-note"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

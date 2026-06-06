@@ -11,14 +11,17 @@ const surpriseButton = document.getElementById("surprise-button");
 const surpriseMessage = document.getElementById("surprise-message");
 const surpriseHint = document.getElementById("surprise-hint");
 const surpriseDots = document.querySelectorAll(".surprise-dot");
+const cuteQrContainer = document.getElementById("cute-qr");
+const downloadQrButton = document.getElementById("download-qr");
 const sparkleLayer = document.getElementById("sparkle-layer");
 const cursorBloom = document.getElementById("cursor-bloom");
+const birthdaySiteUrl = "http://rayfrank.github.io/HAPPYBIRTHDAYQWARRA/";
 
 const surpriseMessages = [
-  "May your new year overflow with joy, answered prayers, and gentle peace.",
-  "May every dream you carry find room to bloom bigger and brighter.",
-  "May your smile stay loud, your heart stay soft, and your wins stay many.",
-  "May love follow you everywhere, because you make life sweeter for all of us."
+  "May your new year overflow with joy, answered prayers, gentle peace, and the kind of happiness that settles deeply into your heart and stays there.",
+  "May every dream you carry find room to bloom bigger and brighter, and may your effort keep meeting favor in beautiful and surprising ways.",
+  "May your smile stay loud, your heart stay soft, your confidence keep growing, and your wins become too many to count one by one.",
+  "May love follow you everywhere, because you make life sweeter for all of us, and you deserve to feel treasured, celebrated, and deeply seen."
 ];
 
 let surpriseIndex = 0;
@@ -217,6 +220,76 @@ function setupCursorBloom() {
   window.addEventListener("focus", () => {
     document.body.classList.add("has-pointer-bloom");
   });
+}
+
+function initCuteQr() {
+  if (!cuteQrContainer) {
+    return;
+  }
+
+  if (!window.QRCodeStyling) {
+    document.body.classList.add("no-qr-lib");
+    cuteQrContainer.innerHTML = `<a href="${birthdaySiteUrl}" target="_blank" rel="noreferrer">${birthdaySiteUrl}</a>`;
+
+    if (downloadQrButton) {
+      downloadQrButton.disabled = true;
+      downloadQrButton.textContent = "QR download unavailable";
+    }
+
+    return;
+  }
+
+  const qrCode = new QRCodeStyling({
+    width: 320,
+    height: 320,
+    type: "canvas",
+    data: birthdaySiteUrl,
+    margin: 0,
+    image: "5.jpeg",
+    qrOptions: {
+      errorCorrectionLevel: "H"
+    },
+    dotsOptions: {
+      type: "rounded",
+      gradient: {
+        type: "linear",
+        rotation: Math.PI / 3,
+        colorStops: [
+          { offset: 0, color: "#efb8aa" },
+          { offset: 1, color: "#b592ff" }
+        ]
+      }
+    },
+    cornersSquareOptions: {
+      type: "extra-rounded",
+      color: "#8b6bd1"
+    },
+    cornersDotOptions: {
+      type: "dot",
+      color: "#d79f90"
+    },
+    backgroundOptions: {
+      color: "#fffafc"
+    },
+    imageOptions: {
+      crossOrigin: "anonymous",
+      margin: 10,
+      imageSize: 0.26,
+      hideBackgroundDots: true
+    }
+  });
+
+  qrCode.append(cuteQrContainer);
+
+  if (downloadQrButton) {
+    downloadQrButton.addEventListener("click", () => {
+      qrCode.download({
+        name: "qwarra-birthday-cute-qr",
+        extension: "png"
+      });
+      burstFromElement(downloadQrButton, 22);
+    });
+  }
 }
 
 function createHeartShape() {
@@ -596,4 +669,5 @@ setupPhotoModal();
 setupCelebrateButton();
 setupSurpriseButton();
 setupCursorBloom();
+initCuteQr();
 initThreeScene();
